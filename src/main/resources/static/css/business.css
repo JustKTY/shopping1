@@ -1,0 +1,200 @@
+#body{
+    background-color:rgb(246, 246, 246);
+    margin-top: 90px;
+}
+.header{
+    top: 5px;
+    height: 70px;
+    width: 100%;
+    /* background-image: linear-gradient(90deg,#4b2aee 0,#3cfefa); */
+    background: #FEAC5E;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+    position: fixed;
+    top: 0;
+}
+.header .title{
+    height: 70px;
+    width: 300px;
+    margin-left: 90px;
+    line-height: 70px;
+    font-size: xx-large;
+    color: white;
+}
+.header .backindex{
+    position: absolute;
+    right: 120px;
+    bottom: 10px;
+    color:white;
+    font-size: x-large;
+}
+.wrapper{
+    margin: 0 90px;
+    height: 350px;
+    position: relative;
+    margin-top: 20px;
+}
+.wrapper_mygoods{
+    width: 1283px;
+}
+.wrapper .upload{
+    right: 0;
+    height: 350px;
+    width: 930px;
+    position: absolute;
+    background-color: white;
+}
+.wrapper .upload .uploadtitle{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    font-size: x-large;
+    border-bottom: 2px solid rgb(96, 96, 245);
+}
+.wrapper .upload .introduction{
+    right: 90px;
+    position: absolute;
+    margin: 30px;
+    width: 500px;
+    height: 200px;
+}
+.wrapper .upload .goodsphoto{
+    left: 10px;
+    position: absolute;
+    margin: 30px 50px;
+    width: 220px;
+    height: 200px;
+}
+.wrapper .upload .goodsphoto .uploadphoto{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    background-color: rgb(85, 101, 101,0.75);
+}
+#button3{
+    position: absolute;
+    height: 20px;
+    width: 70px;
+    left: 0;
+    right: 0;
+    margin: 5px auto;
+
+}
+#button1, #button2{ 
+    color: white;
+    position: absolute;
+    bottom: 20px;
+    width: 120px;
+    height: 30px;
+    border: none;
+    background: #F1F2B5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #135058, #F1F2B5);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #135058, #F1F2B5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+#button1{
+    left: 240px;
+}
+#button2{
+    left: 480px;
+}
+.wrapper .information{
+    left: 0;
+    position: absolute;
+    height: 350px;
+    width: 300px;
+    background-color: white;
+}
+.wrapper .information .photobox{
+    height: 200px;
+    width: 200px;
+    margin: 20px 50px;
+    border-radius: 50%;
+}
+.wrapper .information .photobox .photo{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}
+.wrapper .information .name{
+    height: 40px;
+    width: 250px;
+    text-align: center;
+    line-height: 40px;
+    font-size: x-large;
+    margin: 0 auto;
+}
+.wrapper .information .hello{
+    height: 40px;
+    width: 250px;
+    text-align: center;
+    line-height: 40px;
+    font-size: large;
+    margin: 5px auto;
+}
+.wrapper .mygoodstitle{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    font-size: x-large;
+}
+.item{
+    float: left;
+    height: 280px;
+    width: 180px;
+    margin: 0 33px 23px 0;
+    background-color: white;
+    border-radius: 3px;
+    position: relative;
+}
+.item .itemLink{
+    display: block;
+    height: 250px;
+    width: 180px;
+}
+a.itemLink:hover{
+    border: 1.5px solid tomato;
+    border-radius: 3px;
+}
+.item .itemLink .itemPhoto{
+    background: url(../images/goodsphoto.jpg)center/cover no-repeat;
+    background-size: 100% 100%;
+    height: 170px;
+    width: 170px;
+    margin: 5px;
+}
+.item .itemLink .itemPrice{
+    width: 180px;
+    height: 30px;
+    line-height: 30px;
+    color: #ff0036;
+    font-family: arial;
+    font-weight: 400;
+    font-size: 20px;
+}
+.item .itemLink .itemIntroduction{
+    margin-top: 3px;
+    padding: 0 6px;
+    color: #333;
+    font-size: 13px;
+    line-height: 16px;
+    height: 32px;
+    overflow: hidden;
+}
+#deletebutton{
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: 3px;
+    border: none;
+    background-color: blanchedalmond;
+}
+
+
+
+
+

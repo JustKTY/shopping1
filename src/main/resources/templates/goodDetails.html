@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>goodDetails</title>
+    <link rel="stylesheet" href="../static/css/home.css" th:href="@{/css/home.css}">
+    <link rel="stylesheet" href="../static/css/goodDetails.css" th:href="@{/css/goodDetails.css}">
+</head>
+<body>
+    <div id="errorMsg" style="color: red;display: none;"></div>
+    <div class="nav">
+        <ul class="leftNav">
+            <li><a href="" th:href="@{/seller/register}">我要开店</a></li>
+            <li><a th:href="@{/seller/toSeller}">卖家中心</a></li>
+            <li><a th:href="@{/}">返回首页</a></li>
+        </ul>
+
+        <ul class="rightNav">
+            <li><a th:href="@{/user/register}">注册</a></li>
+            <li><a th:href="@{/user/login}">登录</a></li>
+            <li><a th:href="@{/order/toShoppingCar}">购物车</a></li>
+        </ul>
+    </div>
+    <div class="all">
+        <div class="up">
+            <div class="lookAndBuy">
+                <div class="goodInfo_goodDetails">
+                    <img class="goodImage_goodDetails" th:style="'display:block;float:left;margin-right:30px;width:300px;height:400px;'" src="../static/images/时间简史.jpg" th:src="@{${product.PImgUrl}}" alt="时间简史">
+                    <div class="goodName_goodDetails"  th:text="${product.pname}">时间简史</div>
+                    <div class="goodPrice_goodDetails"><span>价格&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: 2em;color: #f40;font-weight: 900;" th:text="${product.price}+'￥'">30￥</span></div>
+                    <div class="goodInfo">
+                        <p class="goodEvaluateAndCollectionNum">收藏:100 &nbsp;&nbsp;月销量:500</p>
+                    </div>
+                </div>
+                <div class="loveGood">
+                    <a class="buy loveGoodButton" href="">立即购买</a>
+                    <a id="cart" class="addToShoppingCart loveGoodButton" href="#" th:href="@{/order/addToCar/}+${product.pid}">加入购物车</a>
+                    <a id="cart1" href="javascript:void(0)" class="addToShoppingCart loveGoodButton" style="display: none;background-color: #9d9d9d">加入购物车</a>
+<!--                    <a class="collect loveGoodButton" href="">收藏</a>-->
+                </div>
+            </div>
+            <div class="storeInfo">
+                <a href="" class="storeIcon"></a>
+                <div class="storeNameAndScore" th:text="${seller.sname}">店铺名称：XXX</div>
+                <div class="storeNameAndScore" th:text="'店铺评分：'+${seller.ranking}">店铺评分：4.8</div>
+            </div>
+        </div>
+        <div class="down">
+            <div class="downNav">
+                <a href="" class="everyDownNav" id="details">商品详情</a>
+                <a href="" class="everyDownNav" id="com">评论</a>
+                <div class="everyDownNav whiteNav"></div>
+            </div>
+            <div class="goodDetailsContent">
+                <iframe  id="iframe" src="detailsText.html" th:src="@{/detailsText}" frameborder="0" class="goodDetailsContent" style="height: 350px;">
+                    <p>您的浏览器不支持iframe</p>
+                </iframe>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script th:inline="javascript">
+
+    window.onload = function () {
+        var errorMsg = document.getElementById("errorMsg");
+        var cart = document.getElementById("cart");
+        var user = [[${session.loginUser}]];
+        var cart1 = document.getElementById("cart1");
+        var iframe = document.getElementById("iframe");
+        var details = document.getElementById("details");
+        var com = document.getElementById("com");
+        var msg = true;
+        if(user!=null){
+           msg = [[${session.msg}]];
+        }
+
+        // function showDetails(){
+        //     document.getElementById("iframe").src = "/detailsText";
+        //     return false;
+        // }
+        // function showComment(){
+        //     document.getElementById("iframe").src = "/post";
+        //     return false;
+        // }
+
+        details.onclick = function(){
+            iframe.src = "/detailsText";
+            return false;
+        };
+
+        com.onclick = function(){
+          iframe.src = "/post2";
+            return false;
+        };
+
+        cart.addEventListener("click",function () {
+            if(user == null){
+                // errorMsg.style.display = 'block';
+                errorMsg.innerText = "您尚未登录，请先登录！";
+                confirm("您还未登录，请您先登录");
+            }
+            else{
+                errorMsg.style.display = 'none';
+            }
+            return false;
+        },false);
+
+        if(user!=null && !msg) {
+            cart.style.display = 'none';
+            cart1.style.display = 'inline';
+            cart1.style.color = 'indianred';
+            cart1.onmouseover = function () {
+                cart1.style.cursor = 'not-allowed';
+            };
+        }
+    };
+</script>
+</html>

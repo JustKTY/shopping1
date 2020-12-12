@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>买你所爱</title>
+    <link rel="stylesheet" href="../static/css/reset.css" th:href="@{/css/reset.css}">
+    <link rel="stylesheet" href="../static/css/login.css" th:href="@{/css/login.css}">
+    <!--
+    ?
+    -->
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_2234289_kcgnonksav.css">
+    <style>
+        @font-face {
+            font-family: "晚安体";
+            src: url(util/晚安体.ttf);
+        }
+    </style>
+    <SCript type="text/javascript">
+
+        function onMouseOver(){
+            YHdenglu.style.cursor = 'pointer';
+            GLYdenglu.style.cursor = 'pointer';
+            SJdenglu.style.cursor = 'pointer';
+        }
+
+        function changeMode(val){
+            var YHlogin = document.getElementById("YHlogin");
+            var GLYlogin = document.getElementById("GLYlogin");
+            var SJlogin = document.getElementById("SJlogin");
+            if(val == 'YHlogin'){
+                YHlogin.style.display = 'block';
+                GLYlogin.style.display = 'none';
+                SJlogin.style.display = 'none';
+
+                YHdenglu.style.borderBottom = '3px solid #FFA00A';
+                GLYdenglu.style.borderBottom = '';
+                SJdenglu.style.borderBottom = ''
+            }
+            else if(val == 'GLYlogin'){
+                YHlogin.style.display = 'none';
+                GLYlogin.style.display = 'block';
+                SJlogin.style.display = 'none';
+
+                YHdenglu.style.borderBottom = '';
+                GLYdenglu.style.borderBottom = '3px solid #FFA00A';
+                SJdenglu.style.borderBottom = ''
+            }
+            else{
+                YHlogin.style.display = 'none';
+                GLYlogin.style.display = 'none';
+                SJlogin.style.display = 'block';
+
+                YHdenglu.style.borderBottom = '';
+                GLYdenglu.style.borderBottom = '';
+                SJdenglu.style.borderBottom = '3px solid #FFA00A'
+            }
+        }
+
+    </SCript>
+</head>
+<body>
+<div class="header">
+    <div class="logo">
+        ×××网
+    </div>
+    <span class="welcome">
+            欢迎登录
+        </span>
+</div>
+<div class="main">
+    <div class="login">
+        <div class="switch-menu">
+            <ul class="clearfix">
+                <li class="left" id='YHdenglu'  onmouseover='onMouseOver()' onclick="changeMode('YHlogin')" style="border-bottom: 3px solid #FFA00A;" >用户登录</li>
+                <li class="left" id='GLYdenglu' onmouseover='onMouseOver()' onclick="changeMode('GLYlogin')" >管理员登录</li>
+                <li class="left" id='SJdenglu' onmouseover='onMouseOver()' onclick="changeMode('SJlogin')" >商家登录</li>
+            </ul>
+        </div>
+
+        <div id="errorMsg" th:text="${error_msg}" th:if="${not #strings.isEmpty(error_msg)}" style="color: red; position: absolute;right: 15px;top: 63px;"></div>
+
+        <div class="YHlogin" id='YHlogin'>
+            <form name='YHlogin' action="" th:action="@{/user/login}" method="post">
+                <input id="input_YHlogin_id"  type="text" name="username" placeholder="请输入用户账号：" value="" >
+                <div class="iconfont icon-icon-test"></div>
+                <input id="input_YHlogin_psw"  type="password" name="password" placeholder="请输入密码：" autocomplete="off" value="" >
+                <div class="iconfont icon-mima"></div>
+                <button class="in">登录</button>
+            </form>
+            <button class="reg"><a href="register.html" th:href="@{/user/register}">注册</a></button>
+            <div class="msg">若您还没有账号，请先注册</div>
+        </div>
+
+        <div class="GLYlogin" id='GLYlogin'>
+            <form name='GLYlogin' action="" th:action="@{/admin/login}" method="post">
+                <input id="input_GLYlogin_id"  type="text" name="aname" placeholder="请输入管理员账号：" value="" >
+                <div class="iconfont icon-icon-test"></div>
+                <input id="input_GLYlogin_psw"  type="password" name="apassword" placeholder="请输入密码：" autocomplete="off" value="" >
+                <div class="iconfont icon-mima"></div>
+                <button class="in">登录</button>
+            </form>
+        </div>
+
+        <div class="SJlogin" id='SJlogin'>
+            <form name='SJlogin' action="" th:action="@{/seller/login}" method="post">
+                <input id="input_SJlogin_id"  type="text" name="sname" placeholder="请输入商家账号：" value="" >
+                <div class="iconfont icon-icon-test"></div>
+                <input id="input_GLYlogin_psw"  type="password" name="spassword" placeholder="请输入密码：" autocomplete="off" value="" >
+                <div class="iconfont icon-mima"></div>
+                <button class="in">登录</button>
+            </form>
+            <button class="reg"><a href="sellerRegister.html" th:href="@{/seller/register}">注册</a></button>
+            <div class="msg">若您还没有账号，请先注册</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

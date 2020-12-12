@@ -1,0 +1,204 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.all{
+    width: 1110px;
+    margin: 0 auto;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+}
+pre{
+    white-space: pre-wrap;
+    /* white-space: -moz-pre-wrap; */
+    /* white-space: -pre-wrap; */
+    /* white-space: -o-pre-wrap; */
+    /* Word-wrap: break-word */
+}
+.up{
+    width: 1100px;
+    height: 550px;
+    margin: 10px auto 0px auto;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #999;
+    border: solid 1px #E8E8E8;
+}
+.up::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.lookAndBuy{
+    width: 800px;
+    height: 100%;
+    float: left;
+    border-right: #E8E8E8 1px solid;
+}
+.lookAndBuy::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.goodInfo_goodDetails{
+    margin-top: 30px;
+    margin-left: 30px;
+}
+.goodInfo_goodDetails::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.goodImage_goodDetails{
+    display: block;
+    float: left;
+    margin-right: 30px;
+}
+.goodName_goodDetails{
+    width: 300px;
+    height: 45px;
+    float: left;
+    overflow: hidden;
+    font-weight: bolder;
+}
+.goodPrice_goodDetails{
+    width: 300px;
+    height: 50px;
+    margin-top: 5px;
+    padding-top: 5px;
+    background-color:#FFF2E8;
+    float: left;
+    text-align: center;
+}
+.loveGood{
+    width: 720px;
+    height: 100px;
+    margin: 15px auto 0 auto;
+    padding-top: 15px;
+}
+.loveGoodButton{
+    width: 200px;
+    height: 40px;
+    float: left;
+    margin-left: 30px;
+    text-align: center;
+    padding-top: 15px;
+    border-radius: 5px;
+    font-size: large;
+    text-decoration: none;
+}
+
+
+.loveGoodButton:hover{
+    cursor: pointer;
+}
+
+
+
+.buy{
+    background-color: #FFE4D0;
+    color: #f40;
+}
+.buy:hover{
+    background-color: #eccdb6;
+}
+.addToShoppingCart{
+    background-color: #f40;
+    color: white;
+}
+.addToShoppingCart:hover{
+    background-color: #f10;
+}
+.collect{
+    background-color: darkblue;
+    color: antiquewhite;
+}
+.collect:hover{
+    background-color: rgb(0,0,100);
+}
+.storeInfo{
+    width: 299px;
+    height: 100%;
+    float: left;
+    background-color: #ffe3e0;
+}
+.down{
+    width: 1100px;
+    min-height: 600px;
+    margin: 10px auto 0px auto;
+    margin-top: 10px;
+    border: solid 1px #E8E8E8;
+}
+.downNav{
+    /* border-style: solid;
+    border-width: 0 0 1px 0;
+    border-color: #E8E8E8; */
+    background-color: #f6f6f6;
+}
+.downNav::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.everyDownNav{
+    width: 150px;
+    height: 42px;
+    float: left;
+    text-align: center;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    border-color: #E8E8E8;
+    text-align: center;
+    padding-top: 15px;
+}
+.everyDownNav:hover{
+    background-color: white;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    border-bottom-color: white;
+}
+.whiteNav{
+    width: 798px;
+    border-width: 0 0px 1px 0;
+    border-color: #E8E8E8;
+}
+.whiteNav:hover{
+    background-color: #f6f6f6;
+    cursor: default;
+    border-bottom: solid;
+    border-width: 0 0px 1px 0;
+    border-color: #E8E8E8;
+}
+.goodDetailsContent{
+    width: 90%;
+    margin: 15px auto;
+    text-indent: 2em;
+}
+.goodInfo{
+    float: left;
+    margin-top: 15px;
+}
+.storeIcon{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-top: 20px;
+    background-image: url("../images/头像\ 男孩.png");
+    background-size: cover;
+    display: block;
+    margin-bottom: 30px;
+}
+.storeInfo>.storeNameAndScore{
+    margin-left: 20px;
+    margin-top: 15px;
+    color: rgb(78, 74, 78);
+    font-size: small;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+

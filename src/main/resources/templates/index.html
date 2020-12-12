@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>买买买</title>
+    <link rel="stylesheet" href="../static/css/home.css" th:href="@{/css/home.css}">
+    <link rel="shortcut icon" href="../static/images/淘宝taoalibaba1688.ico" th:href="@{/images/淘宝taoalibaba1688.ico}" type="image/x-icon">
+</head>
+<body>
+    <div class="nav">
+        <ul class="leftNav">
+            <li><a th:href="@{/seller/register}">我要开店</a></li>
+            <li><a href="seller.html" th:href="@{/seller/toSeller}">卖家中心</a></li>
+            <li><a href="personal.html" th:href="@{/user/toPersonal}" >个人中心</a></li>
+        </ul>
+        <ul class="rightNav">
+            <li></li>
+
+            <span id="span_username" th:text="${session.loginUser.getUserName()}+',欢迎你！'"
+                  th:if="${session.loginUser}">
+            </span>
+            <span id="span_seller" th:text="${session.loginSeller.sname}+',欢迎你！'"
+                  th:if="${session.loginSeller}">
+            </span>
+            <span th:if="not ${session.loginUser} and not ${session.loginSeller}">
+                请先登录！
+            </span>
+
+            <li><a href="/custom-register.html" th:href="@{/user/register}">注册</a></li>
+            <li><a href="login.html" th:href="@{/user/login}">登录</a></li>
+            <li><a href="shoppingcar.html" th:href="@{/order/toShoppingCar}">购物车</a></li>
+            <li><a href="" th:if="${session.loginSeller} or ${session.loginUser}" th:href="@{/seller/exit}">退出</a></li>
+        </ul>
+    </div>
+    <div class="taoxiaopu"></div>
+    <div class="search">
+        <div class="logo"></div>
+        <form class="searchBox" action="/search">
+            <input type="text" name="input" autocomplete="off"><input class="searchButton" type="submit" value="搜索">
+        </form>
+    </div>
+    <div class="showGoods">
+
+        <th:block th:each="i:${#numbers.sequence(0,size)}">
+            <div>
+                <th:block th:each="k:${#numbers.sequence(0,4)}">
+                    <th:block th:if="${#lists.size(products) gt k+(i*5)}">
+                        <a href="goodDetails.html" th:href="@{/goodsDetail/}+${products[k+i*5].pid}">
+                            <div class="goodImageDiv" th:style="'width: 180px;height: 180px;argin: 0 auto;background-size: cover;background-image: url('+*{products[k+i*5].PImgUrl}+');'"></div>
+                            <div class="goodInfo" >
+                                <p class="goodName" th:text="${products[k+i*5].pname}">三轮车</p>
+                                <p class="goodEvaluateAndCollectionNum" th:text="'销量:'+${products[k+i*5].sales}">收藏:100 &nbsp;&nbsp;月销量:500</p>
+                                <p class="goodPrice" th:text="${products[k+i*5].price}+'￥'">5000000￥</p>
+                            </div>
+                        </a>
+                    </th:block>
+                </th:block>
+            </div>
+        </th:block>
+
+        <div>
+            <a href="goodDetails.html">
+                <div class="goodImageDiv"></div>
+                <div class="goodInfo">
+                    <p class="goodName">三轮车</p>
+                    <p class="goodEvaluateAndCollectionNum">收藏:100 &nbsp;&nbsp;月销量:500</p>
+                    <p class="goodPrice">5000000￥</p>
+                </div>
+            </a>
+            <a href="goodDetails.html">
+                <div class="goodImageDiv"></div>
+                <div class="goodInfo">
+                    <p class="goodName">三轮车</p>
+                    <p class="goodEvaluateAndCollectionNum">收藏:100 &nbsp;&nbsp;月销量:500</p>
+                    <p class="goodPrice">5000000￥</p>
+                </div>
+            </a>
+            <a href="goodDetails.html">
+                <div class="goodImageDiv"></div>
+                <div class="goodInfo">
+                    <p class="goodName">三轮车</p>
+                    <p class="goodEvaluateAndCollectionNum">收藏:100 &nbsp;&nbsp;月销量:500</p>
+                    <p class="goodPrice">5000000￥</p>
+                </div>
+            </a>
+            <a href="goodDetails.html">
+                <div class="goodImageDiv"></div>
+                <div class="goodInfo">
+                    <p class="goodName">三轮车</p>
+                    <p class="goodEvaluateAndCollectionNum">收藏:100 &nbsp;&nbsp;月销量:500</p>
+                    <p class="goodPrice">5000000￥</p>
+                </div>
+            </a>
+            <a href="goodDetails.html">
+                <div class="goodImageDiv"></div>
+                <div class="goodInfo">
+                    <p class="goodName">三轮车</p>
+                    <p class="goodEvaluateAndCollectionNum">收藏:100 &nbsp;&nbsp;月销量:500</p>
+                    <p class="goodPrice">5000000￥</p>
+                </div>
+            </a>
+        </div>
+        <div>
+            <a href="goodDetails.html">
+                <div class="goodImageDiv"></div>
+                <div class="goodInfo">
+                    <p class="goodName">三轮车</p>
+                    <p class="goodEvaluateAndCollectionNum">收藏:100 &nbsp;&nbsp;月销量:500</p>
+                    <p class="goodPrice">5000000￥</p>
+                </div>
+            </a>
+            <a href="goodDetails.html">
+                <div class="goodImageDiv"></div>
+                <div class="goodInfo">
+                    <p class="goodName">三轮车</p>
+                    <p class="goodEvaluateAndCollectionNum">收藏:100 &nbsp;&nbsp;月销量:500</p>
+                    <p class="goodPrice">5000000￥</p>
+                </div>
+            </a>
+            <a href="goodDetails.html">
+                <div class="goodImageDiv"></div>
+                <div class="goodInfo">
+                    <p class="goodName">三轮车</p>
+                    <p class="goodEvaluateAndCollectionNum">收藏:100 &nbsp;&nbsp;月销量:500</p>
+                    <p class="goodPrice">5000000￥</p>
+                </div>
+            </a>
+            <a href="goodDetails.html">
+                <div class="goodImageDiv"></div>
+                <div class="goodInfo">
+                    <p class="goodName">三轮车</p>
+                    <p class="goodEvaluateAndCollectionNum">收藏:100 &nbsp;&nbsp;月销量:500</p>
+                    <p class="goodPrice">5000000￥</p>
+                </div>
+            </a>
+            <a href="goodDetails.html">
+                <div class="goodImageDiv"></div>
+                <div class="goodInfo">
+                    <p class="goodName">三轮车</p>
+                    <p class="goodEvaluateAndCollectionNum">收藏:100 &nbsp;&nbsp;月销量:500</p>
+                    <p class="goodPrice">5000000￥</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

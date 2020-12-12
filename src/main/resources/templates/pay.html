@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1"/>
+	<title>付款方式</title>
+	<style type="text/css">
+		/* CSS Document */
+		body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,table,td,img,div,dl,dt,dd,input{margin:0;padding:0; box-sizing: border-box}
+		body{font-size:12px;}
+		img{border:none;}
+		li{list-style:none;}
+		.lightblue{
+			background-color: lightgoldenrodyellow
+		}
+		p{
+			text-align: center;
+			font-family: 华文琥珀;
+			font-size: 20px;
+			color:red 
+		}
+		input,select,textarea{outline:none;}
+		textarea{resize:none;}
+		a{text-decoration:none;}
+		/*清浮动*/
+		.clearfix:after{content:"";display:block;clear:both;}
+		.clearfix{zoom:1;}
+ 
+		/* 取消a标签点击后的虚线框 */
+		a {outline: none;}
+		a:active {star:expression(this.onFocus=this.blur());}
+		input[type="text"]{
+			outline: none;
+		}
+		/*付款方式*/
+		.payWrap{
+			width:950px;
+			min-height: 560px;
+			background: #FFFFFF;
+			margin: 0 auto;
+		}
+		.payHeader{
+			height: 56px;
+			line-height: 56px;
+			border-bottom: 1px solid #CCCCCC;
+			padding: 0 40px;
+		}
+ 
+		.payWrap .fontsize{
+			color:#d81e06 ;
+			font-size: 18px;
+			margin:0 5px;
+		}
+		.payContent{
+			padding:10px 20px;
+		}
+		.unionpayList{
+			width: 100%;
+			height: 40px;
+			line-height: 40px;
+			margin: 5px 0;
+			position: relative;
+			border: 2px solid #FFFFFF;
+		}
+		.unionpayList:hover{
+			cursor: pointer;
+			background: #E4E466;
+		}
+		.unionPrice{
+			position: absolute;
+			top: 0;
+			right: 20px;
+		}
+		.unionpay1{
+			padding: 0 20px 0 62px;
+			background: url("images/") 20px center no-repeat;
+		}
+		.unionpay2{
+			padding: 0 20px 0 62px;
+			background: url("images/") 20px center no-repeat;
+		}
+		.activeBtn{
+			width: 100%;
+			height: 40px;
+			line-height: 40px;
+			border: 2px solid #F0EF59;
+		}
+		.payBorder{
+			position: absolute;
+			top: 550px;
+			left: 980px;
+			width: 100%;
+			border-top: 1px solid #f2f2f2;
+			margin-top: 30px;
+		}
+		.payBut{
+			display: block;
+			width: 150px;
+			height: 32px;
+			line-height: 32px;
+			text-align: center;
+			background: #0169c6!important;
+			color: #FFFFFF!important;
+			float: left!important;
+			margin: 20px 0;
+		}
+		.wait{
+			display:block;
+			width:300px;
+			height: 32px;
+			margin: 30px 0 0 160px;
+			text-decoration: underline!important;
+		}
+	</style>
+</head>
+<body >
+	<div class="lightblue">
+<div class="payWrap">
+	<div class="payHeader clearfix">
+<!--		<strong class="fl">订单编号：aaaaaaaaaa</strong>-->
+		
+		<span class="fr">您的付款金额为：<strong class="fontsize">?</strong>元</span>
+	</div>
+	<p>请选择付款方式：</p>
+	<section class="payContent">
+		<div class="unionpayList activeBtn ">
+			<span class=" unionpay1">支付宝</span>
+			<span class=" unionPrice">支付<strong class="fontsize">?</strong>元</span>
+		</div>
+		<div class="unionpayList activeBtn ">
+			<span class="  unionpay2">微信</span>
+			<span class="unionPrice ">支付<strong class="fontsize">?</strong>元</span>
+		</div>
+		<div class="unionpayList activeBtn ">
+			<span class=" unionpay1">银行卡</span>
+			<span class=" unionPrice">支付<strong class="fontsize">?</strong>元</span>
+		</div>
+		
+		<div class="payBorder clearfix">
+			<a href="#" th:href="@{/}" class="fl payBut ">确认支付</a>
+			
+		</div>
+ 
+	</section>
+</div>
+
+	</div>
+</body>
+</html>
+
+
+
+
+
+

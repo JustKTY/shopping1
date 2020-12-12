@@ -1,0 +1,140 @@
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.main {
+    width: 100%;
+    height: 600px;
+    position: relative;
+    background: url("../images/TB1GTCYLXXXXXcHXpXXcoeQ2VXX-2500-600.jpg") no-repeat top/100% 100%;
+    background-size: cover;
+}
+
+
+.login {
+    background-color: rgba(255, 255, 255, 0.75);
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    left: 1000px;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+}
+
+.main .login .switch-menu ul li {
+    margin: 35px 15px;
+    font-weight: bold;
+    font-size: 16px;
+    padding-bottom: 5px;
+    box-sizing: border-box;
+}
+
+.header{
+    height: 85px;
+    position: relative;
+}
+
+.header .logo{
+    font-size: 2.7em;
+    padding-top: 20px;
+    padding-left: 150px;
+    color: coral;
+    font-family: "晚安体";
+    font-weight: bold;
+}
+
+.header .welcome{
+    position: absolute;
+    left: 340px;
+    top: 30px;
+    font-size: 1.5em;
+    font-family: "晚安体";
+}
+
+
+input {
+    border: 2px solid #f1eeee;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    height: 42px;
+    width: 90%;
+    padding-left: 45px;
+    margin-left: 22px;
+    margin-bottom: 25px;
+}
+
+input:focus{
+    border-color: #ff9000;
+}
+
+.main .login .GLYlogin,
+.main .login .SJlogin {
+    
+    display: none;
+}
+
+.main .login .in,
+.main .login .reg {
+    border: 1px solid #ff9000;
+    width: 80%;
+    margin-left: 42px;
+    height: 42px;
+    color: #fff;
+    background: #f40;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+.main .login .in:hover,
+.main .login .reg:hover {
+    background-color: #ff9000;
+}
+
+.main .login .msg {
+    text-align: center;
+}
+
+.iconfont{
+    width: 38px;
+    height: 37px;
+    background: #f1eeee;
+    text-align: center;
+    line-height: 41px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.iconfont.icon-icon-test,
+.iconfont.icon-mima {
+    font-size: 25px;
+    color: rgb(116, 113, 113);
+}
+
+.iconfont.icon-icon-test {
+    position: absolute;
+    left: 24px;
+    top: 96.5px;
+}
+
+.iconfont.icon-mima {
+    position: absolute;
+    left: 24px;
+    top: 163.5px;
+}
+

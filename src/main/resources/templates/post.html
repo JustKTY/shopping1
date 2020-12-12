@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>南大书屋发贴</title>
+    <link type="text/css" rel="stylesheet" href="../static/css/1.css" th:href="@{/css/1.css}" />
+</head>
+<body>
+<div class="bbs">
+    <header><span onclick="iWantPost()">我要发帖</span></header>
+    <section>
+        <ul>
+
+        </ul>
+    </section>
+    <div class="post" id="post1">
+        <input id="title" placeholder="请输入标题（1-50个字符）">
+         <textarea class="content"></textarea>
+        <input class="btn" value="发布" onclick="post()">
+    </div>
+</div>
+</body>
+</html>
+
+<script>
+
+    function iWantPost() {
+        document.getElementById("post1").style.display = "block";
+    }
+
+    function headPortrait() {
+        //使用数组保存发帖者的头像
+        var head = new Array("images/1.jpg", "images/2.jpg", "03.jpg", "04.jpg");
+        //生成 0 到 数组长度之间的随机数
+        var n = parseInt(Math.random() * 4);
+        return head[n];
+    }
+
+    function post() {
+        document.getElementById("post1").style.display = "none";
+        /* 创建节点 */
+        var ul = document.getElementsByTagName("ul")[0];
+        var li = document.createElement("li");
+        var div = document.createElement("div");
+        var img = document.createElement("img");
+        var h1 = document.createElement("h1");
+        var p = document.createElement("p");
+        var span = document.createElement("span");
+
+        ul.appendChild(li);
+        li.className = ".bbs section ul li";
+
+        li.appendChild(div);
+        div.className = ".bbs section ul li div";
+
+        // 插入头像
+        div.appendChild(img);
+        img.className = ".bbs section ul li div img";
+        img.src = "../image/" + headPortrait();
+
+        // 插入标题
+        li.appendChild(h1);
+        h1.className = ".bbs section ul li h1";
+        h1.innerHTML = document.getElementById("title").value;
+
+        // 插入板块
+        li.appendChild(p);
+        p.className = ".bbs section ul li p";
+        p.innerHTML = "版块：" + document.getElementsByTagName("select")[0].value;
+
+        // 插入时间
+        p.appendChild(span);
+        span.className = ".bbs section ul li p span";
+
+        var today = new Date();
+        var year = today.getFullYear();
+        var month = today.getMonth() + 1;
+        var day = today.getDate();
+        var hour = today.getHours();
+        var minute = today.getMinutes();
+        var second = today.getSeconds();
+
+        span.innerHTML = "发表时间：" + year + "-" + month + "-" + day + "&nbsp;" + hour + ":" + minute + ":" + second;
+
+        document.getElementById("title").value = "";
+        document.getElementsByTagName("select")[0].value = "";
+        ul.insertBefore(li, ul.firstElementChild);
+    }
+</script>

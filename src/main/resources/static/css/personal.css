@@ -1,0 +1,430 @@
+@font-face {
+    font-family: 晚安体;
+    src: url(../../templates/util/晚安体.ttf);
+}
+
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.left{
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+a:hover {
+    color: #ff4401;
+}
+
+.menu{
+    height: 40px;
+    width: 1511px;
+    box-sizing: border-box;
+    margin: auto;
+    position: relative;
+}
+
+.menu ul li {
+    margin-top: 11px;
+    margin-left: 25px;
+    text-align: justify;
+}
+
+.header {
+    width: 100%;
+    height: 60px;
+    background-color: #ff4401;
+    box-sizing: border-box;
+}
+
+.header .tittle {
+    height: 60px;
+    line-height: 60px;
+    font-family: "晚安体";
+    font-size: 2em;
+    color: white;
+    padding-left: 150px;
+    font-weight: bold;
+}
+
+.main {
+    width: 100%;
+    position: relative;
+}
+
+.main-left {
+    width: 800px;
+    margin: 25px;
+    height: 600px;
+    box-sizing: border-box;
+
+}
+
+.icon-che-copy {
+    position: absolute;
+    right: 253px;
+    top: 10px;
+    font-size: 14px;
+    color: #ff4401;
+    font-weight: bold;
+}
+
+.icon-dingdan {
+    position: absolute;
+    top: 11px;
+    right: 175px;
+    color: #ff4401;
+}
+
+.main-left .userinfo {
+    width: 800px;
+    height: 90px;
+    margin-left: 55px;
+    position: relative;
+    
+}
+
+.main-left .userinfo div.userbar {
+    width: 100%;
+    height: 72px;
+    color: #546d7e;
+    background: #f5f8fa;
+    border: 2px solid #e4eaee;
+    box-sizing: border-box;
+}
+
+.main-left .userinfo div.userbar .baseinfo a {
+    width: 52px;
+    height: 52px;
+    display: block;
+    border-radius: 50%;
+    position: absolute;
+    left: 48px;
+    top: 11px;
+}
+
+
+
+.main-left .userinfo div.userbar .baseinfo img {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%; 
+}
+
+.main-left .userinfo div.userbar .baseinfo .name {
+    position: absolute;
+    left: 110px;
+    top: 22px;
+}
+
+.main-left .userinfo div.userbar .baseinfo  .ID {
+    position: absolute;
+    left: 120px;
+    top: 40px;
+}
+
+.main-left .userinfo div.userbar .baseinfo a div {
+    position: absolute;
+    font-size: 13px;
+    color: rgba(255, 255, 255, .6);
+    border-radius: 50%;
+    text-align: center;
+    height: 31px;
+    padding-top: 21px;
+    background: rgba(0, 0, 0, .6);
+    display: none;
+}
+
+.main-left .userinfo div.userbar .baseinfo a:hover div{
+    display: block;
+}
+
+.main .calendal {
+    width: 500px;
+    
+    margin: 0;
+    position: absolute;
+    right: 85px;
+    top: 0;
+}
+
+.main .main-left .address {
+    position: absolute;
+    left: 400px;
+    top: 27px;
+}
+
+/*.main .main-left a:hover {*/
+/*    color: #ff4401;*/
+/*}*/
+
+.main .main-left .order {
+    position: absolute;
+    left: 525px;
+    top: 27px;
+}
+
+.main .main-left .forum {
+    position: absolute;
+    left: 625px;
+    top: 27px;
+}
+
+.main .main-left .comment {
+    position: absolute;
+    left: 675px;
+    top: 41px;
+}
+
+.main .main-left .orderinfo {
+    height: 52px;
+    width: 100%;
+    border: 2px solid #e4eaee;
+    box-sizing: border-box;
+    border-top: none;
+}
+
+.main .main-left .orderinfo li {
+    width: 20%;
+    font-size: 14px;
+    color: #4b4b4b;
+    text-align: center;
+    padding: 17px 0;
+}
+
+.main .main-left .orderinfo li span {
+    margin-left: -1px;
+    height: 18px;
+    line-height: 18px;
+    display: block;
+    border-left: 2px solid #e4eaee;
+}
+
+.main .main-left .orderinfo li em {
+    padding-left: 5px;
+    color: #ff4401;
+    font-size: 13px;
+}
+
+.main .comarea {
+    width: 800px;
+    height: 44px;
+    margin-top: 25px;
+    margin-left: 54px;
+    background: #f5f8fa;
+    position: relative;
+}
+
+.table {
+    border-collapse: collapse;
+    border: 2px solid #e4eaee;
+    border-spacing: 0;
+    width: 800px;
+    height: 440px;
+    margin-left: 54px;
+    box-sizing: border-box;
+    background-color: #f5f8fa;
+    text-align: center;
+    padding: 190px 0;
+}
+
+/*.table a:hover {*/
+/*    color: #ff4401;*/
+/*}*/
+
+table tr td {
+    height: 100px;
+    text-align: center;
+    vertical-align: middle;
+    border-right: 2px solid #e4eaee;
+}
+
+table .tittle td{
+    height: 30px;
+}
+
+table tr {
+    border: 2px solid #e4eaee;
+}
+
+table tr .name{
+    width: 300px;
+}
+
+.goods {
+    width: 800px;
+    height: 300px;
+    margin-left: 54px;
+    background-color: #f5f8fa;
+}
+
+.goods ul {
+    text-align: justify;
+}
+
+.goods ul li {
+    margin-right: 60px;
+    margin-top: 25px;
+}
+
+.goods ul li:nth-child(3n+1){
+    margin-left: 40px;
+}
+
+.goods ul li:nth-child(3n) {
+    margin-right: 0;
+}
+
+.goods ul li .meg {
+    margin-top: 10px;
+    text-align: center;
+}
+.goods ul li .meg div {
+    margin-bottom: 5px;
+}
+
+.goods a img{
+    width: 200px;
+    height: 200px;
+}
+
+.main .comarea .iconfont {
+    font-size: 25px;
+    color: #008c8c;
+}
+
+.main .comarea .iconfont div {
+    width: 150px;
+    position: absolute;
+    font-size: 18px;
+    left: 35px;
+    top: 4px;
+    color: #333;
+}
+
+.main .comarea .icon-luntan {
+    position: absolute;
+    left: 55px;
+    top: 11px;
+}
+
+.main .input {
+    width: 800px;
+    height: 600px;
+    margin-top: 25px;
+    margin-left: 54px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+.main .input span{
+    display: block;
+    width: 700px;
+    margin: auto;
+    text-align: justify;
+    color: #fff;
+    font-size: 18px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    position: relative;
+}
+.main .input .firstin {
+    position: absolute;
+    left: 30px;
+    border-radius: 5px;
+    padding-top: 5px;
+    border: 3px solid #eb4b1a;
+    box-sizing: border-box;
+}
+
+.main .input .firstin:focus {
+    border-color: #008c8c;
+}
+
+.main .input button {
+    width: 70px;
+    height: 25px;
+    color: #fff;
+    background: #27cfcf;
+    border-radius: 15px;
+    position: absolute;
+    right: 30px;
+    bottom: 20px;
+}
+
+.main .input button:hover {
+    background-color: #095353;
+    cursor: pointer;
+} 
+
+.main .input .container{
+    width: 800px;
+    background: #686665;
+    position: relative;
+    border: 2px solid rgb(44, 42, 42);
+    box-sizing: border-box;
+    border-top: none;
+}
+
+.main .input .first {
+    border-top: 2px solid rgb(44, 42, 42);
+}
+
+.main .input .inputwords{
+    width: 800px;
+    height: 250px;
+    background: #686665;
+    position: relative;
+    box-sizing: border-box;
+    border: 2px solid rgb(44, 42, 42);
+    border-top: none;
+    margin-bottom: 25px;
+}
+
+.main .input .inputwords .secondin {
+    position: absolute; 
+    left: 30px;
+    top: 40px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 3px solid #eb4b1a;
+    box-sizing: border-box;
+    padding-top: 5px;
+    overflow-y: scroll;
+}
+
+.main .input .inputwords .secondin:focus {
+    border-color: #008c8c;
+}
+
+.main .input .inputwords .comment {
+    width: 70px;
+    height: 42px;
+    color: #fff;
+    background: #27cfcf;
+    border-radius: 15px;
+    margin-top: 160px;
+}
+
+.main .input .inputwords .comment:hover {
+    background-color: #095353;
+    cursor: pointer;
+}
+
+.main .rightadv {
+    position: absolute;
+    right: 85px;
+    top: 387px;
+}
+
+.main .rightadv .lanbojini {
+    position: absolute;
+    right: -24px;
+    top: 240px
+}

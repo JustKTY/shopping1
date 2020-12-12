@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>南大书屋发贴</title>
+    <link type="text/css" rel="stylesheet" href="../static/css/1.css" th:href="@{/css/1.css}">
+</head>
+<body>
+<div class="bbs">
+	
+    <div style="width: 221px; margin: 0 auto;">
+        <header><span onclick="iWantPost()">我要发帖</span></header>
+    </div>
+    <section>
+        
+<ul>
+        <li class=".bbs section ul li"><img class=".bbs section ul li div img" src="../image/04.jpg">
+			<div class=".bbs section ul li div">特色功能：按压出笔和普通圆珠笔一样 外观材质：制作精美，外观没有什么瑕疵，挺圆润，和普通中性笔大小差不多！ 书写体验：握笔手感舒适</div></li>
+		<li class=".bbs section ul li"><img class=".bbs section ul li div img" src="../image/images/2.jpg"><div class=".bbs section ul li div">书写体验：用起来出墨流畅，感觉很舒服。墨水也不会洇，拿来考试挺靠谱 外观材质：材料不错，没有毛边，用起来挺顺手的。 特色功能：是从别人那里看到这个笔，然后借来用了一下感觉非常好。于是记下来型号，专门跑过来搜索购买的哈哈哈</div></li></ul>
+	
+        
+    </section>
+    <div class="post" id="post1">
+         <textarea id="content" class="content"></textarea>
+        <input class="btn" value="发布" onclick="post()">
+    </div>
+</div>
+</body>
+</html>
+
+<script>
+
+    function iWantPost() {
+        document.getElementById("post1").style.display = "block";
+    }
+
+    function headPortrait() {
+        //使用数组保存发帖者的头像
+        var head = new Array("images/1.jpg", "images/2.jpg", "03.jpg", "04.jpg");
+        //生成 0 到 数组长度之间的随机数
+        var n = parseInt(Math.random() * 4);
+        return head[n];
+    }
+
+    function post() {
+        document.getElementById("post1").style.display = "none";
+        /* 创建节点 */
+        var ul = document.getElementsByTagName("ul")[0];
+        var li = document.createElement("li");
+        var div = document.createElement("div");
+        div.innerHTML = document.getElementById("content").value;
+        document.getElementById("content").value = "";
+        var img = document.createElement("img");
+        var h1 = document.createElement("h1");
+        var p = document.createElement("p");
+        var span = document.createElement("span");
+
+        ul.appendChild(li);
+        li.className = ".bbs section ul li";
+
+        // 插入头像
+        li.appendChild(img);
+        img.className = ".bbs section ul li div img";
+        img.src = "../image/" + headPortrait();
+
+        li.appendChild(div);
+        div.className = ".bbs section ul li div";
+
+//    
+//        // 插入时间
+//        p.appendChild(span);
+//        span.className = ".bbs section ul li p span";
+//
+//        var today = new Date();
+//        var year = today.getFullYear();
+//        var month = today.getMonth() + 1;
+//        var day = today.getDate();
+//        var hour = today.getHours();
+//        var minute = today.getMinutes();
+//        var second = today.getSeconds();
+//
+//        span.innerHTML = "发表时间：" + year + "-" + month + "-" + day + "&nbsp;" + hour + ":" + minute + ":" + second;
+
+
+        ul.insertBefore(li, ul.firstElementChild);
+    }
+</script>

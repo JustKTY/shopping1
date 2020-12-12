@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>❆❆❆❆❆卖家工作室❆❆❆❆❆</title>
+    <link rel="stylesheet" href="../static/css/business.css" th:href="@{/css/business.css}">
+    <link rel="stylesheet" href="../static/css/reset.css" th:href="@{/css/reset.css}">
+    <link rel="shortcut icon" type="image/x-icon" href="../static/images/favicon.ico" th:href="@{/images/favicon.ico}">
+    <script src="../static/js/jquery-3.3.1.js" th:src="@{/js/jquery-3.3.1.js}"></script>
+<!--    <javascript>-->
+<!--        $(-->
+<!--    </javascript>-->
+
+<!--    <script th:inline="javascript">-->
+<!--        $(function (){-->
+<!--            if([[${error_msg}]]!=null){-->
+<!--                var msg = [[${error_msg}]];-->
+<!--                if(msg.toString()==="商家请先登录！"){-->
+<!--                    var choose = confirm(msg);-->
+<!--                    if(choose==true){-->
+<!--                        location.href="/user/login";-->
+<!--                    }-->
+<!--                }else{-->
+<!--                    alert(msg);-->
+<!--                }-->
+<!--            }-->
+<!--        })-->
+
+<!--        $("#uploadForm").submit(function (){-->
+<!--            if($("price").val()==null){-->
+<!--                alert("请填好完整信息！");-->
+<!--                location.href="/seller/toSeller";-->
+<!--            }-->
+<!--        })-->
+
+<!--    </script>-->
+
+</head>
+<body id="body">
+    <div class="wrapper">
+        <div class="upload">
+            <div class="uploadtitle">
+                上传商品:
+            </div>
+            <form id="uploadForm" action="" th:action="@{/seller/uploadProduct}" method="post" enctype="multipart/form-data">
+
+                <input type="hidden" name="sid" th:if="${session.loginSeller}" th:value="${session.loginSeller.sid}"/>
+
+                <div class="introduction">
+                    商品名称：
+                    <input name="pname" type="text" placeholder="请输入商品名称"><br><br>
+                    商品价格：
+                    <input type="text" id="price" name="price" placeholder="请输入商品价格"><br><br>
+                    商品简介：<br><br>
+                    <textarea cols="60" rows="6" name="productIntroduce" placeholder="请介绍您的商品："></textarea>
+                </div>
+                <div class="goodsphoto">
+                    <img src="../static/images/goodsphoto.jpg" th:src="@{/images/goodsphoto.jpg}" alt="" style="width: 220px; height: 200px;">
+                    <div class="uploadphoto" >
+                        <input type="file" name="fileName" id="button3"/>
+                    </div>
+                </div>
+                <button type="submit" id="button1">
+                    上传至我的店铺
+                </button>
+                <button type="reset" id="button2">
+                    重新上传
+                </button>
+            </form>
+        </div>
+        <div class="information">
+            <div class="photobox">
+                <img src="../static/images/business.jpg" th:src="@{/images/business.jpg}" alt="" class="photo">
+            </div>
+            <div class="name" th:if="${session.loginSeller}" th:text="${session.loginSeller}?${session.loginSeller.sname}:'未登录商家'" >
+                XXXXXXXX
+            </div>
+            <div class="hello">
+                您好!&nbsp;欢迎来到卖家工作室！
+            </div>
+        </div>
+    </div>
+    <div class="wrapper wrapper_mygoods">
+        <div class="mygoodstitle">
+            ☛我的商品
+        </div>
+
+        <div class="item"  th:each="product:${session.loginSeller!=null}?${session.loginSeller.products}" >
+            <a href="" class="itemLink" th:href="@{/goodsDetail/}+${product.pid}">
+                <div class="" style=" background: url(../static/images/goodsphoto.jpg)center/cover no-repeat;
+    background-size: 100% 100%;height: 170px;width: 170px;margin: 5px;" th:style="'background-size: 100% 100%;height: 170px;width: 170px;margin: 5px;background: url('+*{product.PImgUrl}+')center/cover no-repeat;'" >
+
+                </div>
+                <div class="itemPrice">
+                    <span>￥</span>
+                    <span th:text="${product.price}">999.0</span>
+                </div>
+                <div class="itemIntroduction" th:text="${product.productIntroduce}">手机电池大蒜擦的是擦数控机床拿手菜巴萨爆粗口啦不吃饭看蜡笔擦上课就非常上档次色彩色啊擦背啊背减肥的巨额罚款尖端科技就啊边擦背参加啊饿不吃</div>
+            </a>
+            <a th:href="@{/seller/delProduct/}+${product.pid}"><button type="button" id="deletebutton" >
+                删除商品
+            </button><a/>
+        </div>
+
+    </div>
+    <div class="header">
+        <div class="backindex">
+            <a href="index.html" th:href="@{/templates/index.html}">返回首页</a>
+        </div>
+        <div class="title">
+            卖家工作室
+        </div>
+    </div>
+</body>
+</html>
